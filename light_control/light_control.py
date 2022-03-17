@@ -1,4 +1,4 @@
-# importing requests for cummunicating with the API
+# importing requests for communicating with the API
 import requests
 # importing urllib3 for disabling warnings
 import urllib3
@@ -6,12 +6,16 @@ import urllib3
 # disabling warnings (certification issue)
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
+# setting the username and IP-adress
+user = "dCOuv5NAZaNSuZ5UGbB7dHEUfB182FjhMbPateTa"
+ip_adress = "192.168.178.71"
+
 # putting all lights in a list
 light_states = [
-    "https://192.168.178.71/api/dCOuv5NAZaNSuZ5UGbB7dHEUfB182FjhMbPateTa/lights/1/state",
-    "https://192.168.178.71/api/dCOuv5NAZaNSuZ5UGbB7dHEUfB182FjhMbPateTa/lights/2/state",
-    "https://192.168.178.71/api/dCOuv5NAZaNSuZ5UGbB7dHEUfB182FjhMbPateTa/lights/3/state",
-    "https://192.168.178.71/api/dCOuv5NAZaNSuZ5UGbB7dHEUfB182FjhMbPateTa/lights/4/state"
+    f"https://{ip_adress}/api/{user}/lights/1/state",
+    f"https://{ip_adress}/api/{user}/lights/2/state",
+    f"https://{ip_adress}/api/{user}/lights/3/state",
+    f"https://{ip_adress}/api/{user}/lights/4/state"
 ]
 
 
