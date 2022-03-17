@@ -1,5 +1,5 @@
 # importing requests for communicating with the API
-import requests as rq
+import requests
 # importing urllib3 for disabling warnings
 import urllib3
 
@@ -22,7 +22,7 @@ light_states = [
 def put_lights(data):
     # put every light in the list to the specified data (changing color, turning on/off, etc.)
     for light in light_states:
-        rq.put(light, data, verify=False)
+        requests.put(light, data, verify=False)
 
 
 # "on":bool -> turn the lights on  or off
