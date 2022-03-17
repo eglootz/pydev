@@ -4,14 +4,11 @@ from tkinter import ttk
 # importing other files and functions from this directory
 import light_control as lc
 import check_motion as cm
+import color
+import cam
 # importing urllib3 for disabling warnings
 import urllib3
-# importing the time module for logging motion times
-import time
-# import the camera function
-import cam
-# import the color wheel
-import color
+
 
 # disable warnings about insecure requests
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
