@@ -23,7 +23,7 @@ root.geometry("800x100")
 # setting a title
 root.title('Light Control')
 # making it resizeable (0=False, 1=True)
-root.resizable(1, 1)
+root.resizable(0, 0)
 
 
 red_button = ttk.Button(root, text="RED", command=lambda: lc.red_light())
@@ -51,7 +51,8 @@ on_button.grid(column=0, row=2, padx=5, pady=5)
 off_button = ttk.Button(root, text="OFF", command=lambda: lc.turn_off())
 off_button.grid(column=1, row=2, padx=5, pady=5)
 
-off_button = ttk.Button(root, text="HUI", command=lambda: color.change_color())
+off_button = ttk.Button(
+    root, text="HUE", command=lambda: color.change_color())
 off_button.grid(column=2, row=2, padx=5, pady=5)
 
 
