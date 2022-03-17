@@ -10,6 +10,8 @@ import urllib3
 import time
 # import the camera function
 import cam
+# import the color wheel
+import color
 
 # disable warnings about insecure requests
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -48,6 +50,9 @@ on_button.grid(column=0, row=2, padx=5, pady=5)
 
 off_button = ttk.Button(root, text="OFF", command=lambda: lc.turn_off())
 off_button.grid(column=1, row=2, padx=5, pady=5)
+
+off_button = ttk.Button(root, text="HUI", command=lambda: color.change_color())
+off_button.grid(column=2, row=2, padx=5, pady=5)
 
 
 root.mainloop()
