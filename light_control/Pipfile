@@ -6,6 +6,9 @@ name = "pypi"
 [packages]
 requests = "*"
 certifi = "*"
+opencv-python = "*"
+cmake = "*"
+face-recognition = "*"
 
 [dev-packages]
 
