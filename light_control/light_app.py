@@ -49,19 +49,5 @@ on_button.grid(column=0, row=2, padx=5, pady=5)
 off_button = ttk.Button(root, text="OFF", command=lambda: lc.turn_off())
 off_button.grid(column=1, row=2, padx=5, pady=5)
 
-current_motion = False
-
-while True:
-    motion = cm.check_motion()
-
-    if motion == True and current_motion == False:
-        print(f"Motion detected: {time.strftime('%H:%M:%S')}")
-        lc.red_light()
-        cam.picture(name=f"{time.strftime('%H:%M:%S')}")
-        current_motion = True
-    if motion == False:
-        current_motion = False
-        lc.white_light()
-
 
 root.mainloop()
