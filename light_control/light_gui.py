@@ -20,7 +20,7 @@ root.geometry("800x100")
 # setting a title
 root.title('Light Control')
 # making it resizeable (0=False, 1=True)
-root.resizable(0, 0)
+root.resizable(1, 1)
 
 
 red_button = ttk.Button(root, text="RED", command=lambda: lc.light("red"))
