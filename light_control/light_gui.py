@@ -8,7 +8,6 @@ import color_wheel as cw
 # importing urllib3 for disabling warnings
 import urllib3
 
-
 # disable warnings about insecure requests
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
@@ -49,8 +48,7 @@ on_button.grid(column=0, row=2, padx=5, pady=5)
 off_button = ttk.Button(root, text="OFF", command=lambda: lc.toggle("off"))
 off_button.grid(column=1, row=2, padx=5, pady=5)
 
-hue_button = ttk.Button(
-    root, text="HUE", command=lambda: cw.change_color())
+hue_button = ttk.Button(root, text="HUE", command=lambda: cw.change_color())
 hue_button.grid(column=2, row=2, padx=5, pady=5)
 
 
