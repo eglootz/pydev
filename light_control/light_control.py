@@ -44,7 +44,6 @@ def light(color):
     if color == "red":
         # setting data for the specified color
         data = '{"on":true, "sat":254, "bri":254,"hue":65280}'
-
     elif color == "yellow":
         data = '{"on":true, "sat":254, "bri":254,"hue":12750}'
     elif color == "green":
