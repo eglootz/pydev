@@ -44,10 +44,10 @@ white_button = ttk.Button(
     root, text="WHITE", command=lambda: lc.light("white"))
 white_button.grid(column=5, row=1, padx=5, pady=5)
 
-on_button = ttk.Button(root, text="ON", command=lambda: lc.turn_on())
+on_button = ttk.Button(root, text="ON", command=lambda: lc.toggle("on"))
 on_button.grid(column=0, row=2, padx=5, pady=5)
 
-off_button = ttk.Button(root, text="OFF", command=lambda: lc.turn_off())
+off_button = ttk.Button(root, text="OFF", command=lambda: lc.toggle("off"))
 off_button.grid(column=1, row=2, padx=5, pady=5)
 
 off_button = ttk.Button(
