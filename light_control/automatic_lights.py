@@ -17,7 +17,7 @@ while True:
     if motion == True and current_motion == False:
         current_time = time.strftime('%H:%M:%S')
         print(f"Motion detected: {current_time}")
-        lc.red_light()
+        lc.light("red")
         cam.picture(name=f"{current_time}")
         current_motion = True
     if motion == False:

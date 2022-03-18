@@ -23,23 +23,25 @@ root.title('Light Control')
 root.resizable(0, 0)
 
 
-red_button = ttk.Button(root, text="RED", command=lambda: lc.red_light())
+red_button = ttk.Button(root, text="RED", command=lambda: lc.light("red"))
 red_button.grid(column=0, row=1, padx=5, pady=5)
 
-green_button = ttk.Button(root, text="GREEN", command=lambda: lc.green_light())
+green_button = ttk.Button(
+    root, text="GREEN", command=lambda: lc.light("green"))
 green_button.grid(column=1, row=1, padx=5, pady=5)
 
 yellow_button = ttk.Button(
-    root, text="YELLOW", command=lambda: lc.yellow_light())
+    root, text="YELLOW", command=lambda: lc.light("yellow"))
 yellow_button.grid(column=2, row=1, padx=5, pady=5)
 
-pink_button = ttk.Button(root, text="PINK", command=lambda: lc.pink_light())
+pink_button = ttk.Button(root, text="PINK", command=lambda: lc.light("pink"))
 pink_button.grid(column=3, row=1, padx=5, pady=5)
 
-blue_button = ttk.Button(root, text="BLUE", command=lambda: lc.blue_light())
+blue_button = ttk.Button(root, text="BLUE", command=lambda: lc.light("blue"))
 blue_button.grid(column=4, row=1, padx=5, pady=5)
 
-white_button = ttk.Button(root, text="WHITE", command=lambda: lc.white_light())
+white_button = ttk.Button(
+    root, text="WHITE", command=lambda: lc.light("white"))
 white_button.grid(column=5, row=1, padx=5, pady=5)
 
 on_button = ttk.Button(root, text="ON", command=lambda: lc.turn_on())
