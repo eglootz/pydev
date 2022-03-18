@@ -64,7 +64,7 @@ def white_light():
     put_lights(data=data)
 
 
-def light(xy):
+def colored_light(xy):
     data = '{"on":true, "sat":254, "bri":254,"xy":' + f"{xy}" + "}"
     put_lights(data=data)
 
