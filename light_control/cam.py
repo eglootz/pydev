@@ -9,10 +9,3 @@ def picture(name):
     cv2.imwrite(f"log_images/{name}.jpg", frame)
     cv2.destroyAllWindows()
     vc.release()
-
-# if frame is not None:
-# cv2.imshow("preview", frame)
-#rval, frame = vc.read()
-
-# if cv2.waitKey(1) & 0xFF == ord('q'):
-#   break
