@@ -5,7 +5,6 @@ from tkinter import ttk
 import light_control as lc
 import check_motion as cm
 import color
-import cam
 # importing urllib3 for disabling warnings
 import urllib3
 
