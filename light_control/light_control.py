@@ -32,10 +32,10 @@ def put_lights(data):
 # "xy":[x,y] -> setting a color using coordinates
 
 
-def toggle(mode):
-    if mode == "on":
+def toggle(state):
+    if state == "on":
         data = '{"on": true}'
-    elif mode == "off":
+    elif state == "off":
         data = '{"on": false}'
     put_lights(data=data)
 
