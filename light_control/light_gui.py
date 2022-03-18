@@ -3,8 +3,8 @@ import tkinter as tk
 from tkinter import ttk
 # importing other files and functions from this directory
 import light_control as lc
-import check_motion as cm
 import color
+
 # importing urllib3 for disabling warnings
 import urllib3
 
