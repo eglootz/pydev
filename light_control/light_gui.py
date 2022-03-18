@@ -3,7 +3,7 @@ import tkinter as tk
 from tkinter import ttk
 # importing other files and functions from this directory
 import light_control as lc
-import color
+import color_wheel as cw
 
 # importing urllib3 for disabling warnings
 import urllib3
@@ -50,7 +50,7 @@ off_button = ttk.Button(root, text="OFF", command=lambda: lc.toggle("off"))
 off_button.grid(column=1, row=2, padx=5, pady=5)
 
 off_button = ttk.Button(
-    root, text="HUE", command=lambda: color.change_color())
+    root, text="HUE", command=lambda: cw.change_color())
 off_button.grid(column=2, row=2, padx=5, pady=5)
 
 
