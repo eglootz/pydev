@@ -1,14 +1,11 @@
 # importing other files and functions from this directory
 import light_control as lc
 import check_motion as cm
-# importing urllib3 for disabling warnings
-import urllib3
+import cam
 # importing the time module for logging motion times
 import time
-# import the camera function
-import cam
 
-
+# set current_motion to false to start the program
 current_motion = False
 
 while True:
@@ -18,8 +15,8 @@ while True:
         current_time = time.strftime('%H:%M:%S')
         print(f"Motion detected: {current_time}")
         lc.light("red")
-        cam.picture(name=f"{current_time}")
+        cam.picture(name=current_time)
         current_motion = True
     if motion == False:
         current_motion = False
-        lc.white_light()
+        lc.light("white")
