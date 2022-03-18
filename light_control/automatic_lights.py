@@ -15,9 +15,10 @@ while True:
     motion = cm.check_motion()
 
     if motion == True and current_motion == False:
-        print(f"Motion detected: {time.strftime('%H:%M:%S')}")
+        current_time = time.strftime('%H:%M:%S')
+        print(f"Motion detected: {current_time}")
         lc.red_light()
-        cam.picture(name=f"{time.strftime('%H:%M:%S')}")
+        cam.picture(name=f"{current_time}")
         current_motion = True
     if motion == False:
         current_motion = False
