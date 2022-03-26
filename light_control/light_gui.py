@@ -52,4 +52,19 @@ hue_button = ttk.Button(root, text="HUE", command=lambda: cw.change_color())
 hue_button.grid(column=2, row=2, padx=5, pady=5)
 
 
+slider = ttk.Scale(
+    root,
+    from_=0,
+    to=254,
+    orient='horizontal',  # vertical
+    # command=slider_changed,
+    # variable=current_value
+)
+
+slider.grid(
+    column=3,
+    row=2,
+    sticky='we'
+)
+
 root.mainloop()

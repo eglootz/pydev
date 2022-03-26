@@ -1,5 +1,7 @@
 import smtplib
 import ssl
+import imghdr
+from email.message import EmailMessage
 from credentials import password, sender_email
 
 port = 465  # For SSL

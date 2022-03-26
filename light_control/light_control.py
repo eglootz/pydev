@@ -61,3 +61,8 @@ def light(color):
 def colored_light(xy):
     data = '{"on":true, "sat":254, "bri":254,"xy":' + f"{xy}" + "}"
     put_lights(data=data)
+
+
+def brightness(value):
+    data = '{"bri":' + f"{value}" + "}"
+    put_lights(data=data)
