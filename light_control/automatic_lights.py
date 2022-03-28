@@ -16,7 +16,7 @@ while True:
         current_time = time.strftime('%H:%M:%S')
         print(f"Motion detected: {current_time}")
         lc.light("red")
-        # cam.picture(name=current_time)
+        cam.picture(name=current_time)
         current_motion = True
         subject = f"Motion detected at {current_time}!"
         content = f"There was a motion in your room - who could it be? ({current_time})"
