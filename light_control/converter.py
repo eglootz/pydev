@@ -5,15 +5,12 @@ def rgb_to_xy(red, green, blue):
 
     if red > 0.04045:
         red = (red + 0.055) / (1.0 + 0.055)  # , 2.4
-
     else:
         red = red / 12.92
-
     if (green > 0.04045):
         green = (green + 0.055) / (1.0 + 0.055)  # , 2.4
     else:
         green = green / 12.92
-
     if (blue > 0.04045):
         blue = (blue + 0.055) / (1.0 + 0.055)  # , 2.4
     else:

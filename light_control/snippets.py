@@ -40,24 +40,82 @@ def toggle(state):
     put_lights(data=data)
 
 
+# ANDERS ALS IN
 def light(color):
     if color == "red":
         # setting data for the specified color
-        data = '{"on":true, "sat":254, "bri":254,"hue":65280}'
+        data = '{"hue":65280}'
     elif color == "yellow":
-        data = '{"on":true, "sat":254, "bri":254,"hue":12750}'
+        data = '{"hue":12750}'
     elif color == "green":
-        data = '{"on":true, "sat":254, "bri":254,"hue":25500}'
+        data = '{"hue":25500}'
     elif color == "blue":
-        data = '{"on":true, "sat":254, "bri":254,"hue":46920}'
+        data = '{"hue":46920}'
     elif color == "pink":
-        data = '{"on":true, "sat":254, "bri":254,"hue":56100}'
+        data = '{"hue":56100}'
     elif color == "white":
-        data = '{"on":true, "sat":254, "bri":254,"xy":[0.4023,0.4267]}'
+        data = '{"xy":[0.4023,0.4267]}'
 
     put_lights(data=data)
 
 
 def colored_light(xy):
-    data = '{"on":true, "sat":254, "bri":254,"xy":' + f"{xy}" + "}"
+    data = '{"xy":' + f"{xy}" + "}"
     put_lights(data=data)
+
+
+def brightness(value):
+    data = '{"bri":' + f"{value}" + "}"
+    put_lights(data=data)
+
+
+def saturation(value):
+    data = '{"sat":' + f"{value}" + "}"
+    put_lights(data=data)
+
+
+# light_gui.py
+# NEU, NICHT DOKUMENTIERT
+
+
+def bri_slider_changed(event):
+    bri = int(bri_slider.get())
+    print(bri)
+    lc.brightness(value=bri)
+
+
+bri_slider = ttk.Scale(
+    root,
+    from_=0,
+    to=254,
+    orient='horizontal',  # vertical
+    command=bri_slider_changed
+    # variable=current_value
+)
+
+bri_slider.grid(
+    column=3,
+    row=2,
+    sticky='we'
+)
+
+
+def sat_slider_changed(event):
+    sat = int(sat_slider.get())
+    print(sat)
+    lc.saturation(value=sat)
+
+
+sat_slider = ttk.Scale(
+    root,
+    from_=0,
+    to=254,
+    orient='horizontal',  # vertical
+    command=sat_slider_changed
+)
+
+sat_slider.grid(
+    column=4,
+    row=2,
+    sticky='we'
+)
