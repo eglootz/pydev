@@ -10,6 +10,7 @@ import time
 current_motion = False
 
 while True:
+    # time.sleep(20)
     motion = cm.check_motion()
 
     if motion == True and current_motion == False:
@@ -18,10 +19,10 @@ while True:
         lc.light("red")
         cam.picture(name=current_time)
         current_motion = True
-        subject = f"Motion detected at {current_time}!"
-        content = f"There was a motion in your room - who could it be? ({current_time})"
-        sm.send_mail(subject=subject, content=content,
-                     person="Bewegungslogger")
+        #subject = f"Motion detected at {current_time}!"
+        #content = f"There was a motion in your room - who could it be? ({current_time})"
+        # sm.send_mail(subject=subject, content=content,
+        #            person="Bewegungslogger")
     if motion == False:
         current_motion = False
         lc.light("white")

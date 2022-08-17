@@ -51,4 +51,47 @@ off_button.grid(column=1, row=2, padx=5, pady=5)
 hue_button = ttk.Button(root, text="HUE", command=lambda: cw.change_color())
 hue_button.grid(column=2, row=2, padx=5, pady=5)
 
+
+def bri_slider_changed(event):
+    bri = int(bri_slider.get())
+    print(bri)
+    lc.brightness(value=bri)
+
+
+bri_slider = ttk.Scale(
+    root,
+    from_=0,
+    to=254,
+    orient='horizontal',  # vertical
+    command=bri_slider_changed
+    # variable=current_value
+)
+
+bri_slider.grid(
+    column=3,
+    row=2,
+    sticky='we'
+)
+
+
+def sat_slider_changed(event):
+    sat = int(sat_slider.get())
+    print(sat)
+    lc.saturation(value=sat)
+
+
+sat_slider = ttk.Scale(
+    root,
+    from_=0,
+    to=254,
+    orient='horizontal',  # vertical
+    command=sat_slider_changed
+)
+
+sat_slider.grid(
+    column=4,
+    row=2,
+    sticky='we'
+)
+
 root.mainloop()

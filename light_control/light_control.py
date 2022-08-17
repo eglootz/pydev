@@ -2,27 +2,32 @@
 import requests
 # importing urllib3 for disabling warnings
 import urllib3
+import time
 
 # disabling warnings (certification issue)
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # setting the username and IP-adress
-user = "dCOuv5NAZaNSuZ5UGbB7dHEUfB182FjhMbPateTa"
-ip_adress = "192.168.178.71"
+user = "JoSOxXkKb6sVDmTNEVsGel3sFh0wehyC3WHv0oAv"
+#ip_adress = "192.168.178.71"
 
+#ip_adress = "192.168.77.39"
+
+ip_adress = "192.168.178.71"
 # putting all lights in a list
 light_states = [
-    f"https://{ip_adress}/api/{user}/lights/1/state",
-    f"https://{ip_adress}/api/{user}/lights/2/state",
-    f"https://{ip_adress}/api/{user}/lights/3/state",
-    f"https://{ip_adress}/api/{user}/lights/4/state"
+    f"http://{ip_adress}/api/{user}/lights/1/state",
+    f"http://{ip_adress}/api/{user}/lights/2/state",
+    f"http://{ip_adress}/api/{user}/lights/3/state",
+    f"http://{ip_adress}/api/{user}/lights/4/state"
 ]
 
 
 def put_lights(data):
     # put every light in the list to the specified data (changing color, turning on/off, etc.)
     for light in light_states:
-        requests.put(light, data, verify=False)
+        time.sleep(1)
+        requests.put(light, data, verify=False, timeout=3)
 
 
 # "on":bool -> turn the lights on  or off
@@ -60,4 +65,14 @@ def light(color):
 
 def colored_light(xy):
     data = '{"on":true, "sat":254, "bri":254,"xy":' + f"{xy}" + "}"
+    put_lights(data=data)
+
+
+def brightness(value):
+    data = '{"bri":' + f"{value}" + "}"
+    put_lights(data=data)
+
+
+def saturation(value):
+    data = '{"sat":' + f"{value}" + "}"
     put_lights(data=data)
