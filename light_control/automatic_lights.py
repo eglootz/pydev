@@ -22,17 +22,17 @@ while True:
         cam.picture(name=current_time)
         current_motion = True
 
+        alert = f"Motion detected at {current_time}!"
         # mail stuff
-        subject = f"Motion detected at {current_time}!"
+
         content = f"There was a motion in your room - who could it be? ({current_time})"
-        sm.send_mail(subject=subject, content=content,
+        sm.send_mail(subject=alert, content=content,
                      person="Bewegungslogger")
 
         # tweet stuff
-        status = f"Motion detected at {current_time}!"
         path = f"log_images/{current_time}.jpg"
         # t.tweet_image(status=status, path=path)
-        t.send_dm(username="eglootz", path=path, status=status)
+        t.send_dm(username="eglootz", path=path, status=f"{alert} @eglootz")
 
         os.remove(path)
 
