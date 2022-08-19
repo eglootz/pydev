@@ -1,10 +1,10 @@
 # importing requests for communicating with the API
 import requests
 # importing urllib3 for disabling warnings
-import urllib3
+#import urllib3
 
 # disabling warnings (certification issue)
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+# urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # setting the username and IP-adress
 user = "dCOuv5NAZaNSuZ5UGbB7dHEUfB182FjhMbPateTa"
@@ -12,17 +12,17 @@ ip_adress = "192.168.178.71"
 
 # putting all lights in a list
 light_states = [
-    f"https://{ip_adress}/api/{user}/lights/1/state",
-    f"https://{ip_adress}/api/{user}/lights/2/state",
-    f"https://{ip_adress}/api/{user}/lights/3/state",
-    f"https://{ip_adress}/api/{user}/lights/4/state"
+    f"http://{ip_adress}/api/{user}/lights/1/state",
+    f"http://{ip_adress}/api/{user}/lights/2/state",
+    f"http://{ip_adress}/api/{user}/lights/3/state",
+    f"http://{ip_adress}/api/{user}/lights/4/state"
 ]
 
 
 def put_lights(data):
     # put every light in the list to the specified data (changing color, turning on/off, etc.)
     for light in light_states:
-        requests.put(light, data, verify=False)
+        requests.put(light, data)  # , verify=False)
 
 
 # "on":bool -> turn the lights on  or off

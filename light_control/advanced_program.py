@@ -1,16 +1,16 @@
 import requests
 
 # disabling warnings (certification issue)
-import urllib3
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+#import urllib3
+# urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
 # advanced program
 urls = [
-    "https://192.168.178.71/api/dCOuv5NAZaNSuZ5UGbB7dHEUfB182FjhMbPateTa/lights/1/state",
-    "https://192.168.178.71/api/dCOuv5NAZaNSuZ5UGbB7dHEUfB182FjhMbPateTa/lights/2/state",
-    "https://192.168.178.71/api/dCOuv5NAZaNSuZ5UGbB7dHEUfB182FjhMbPateTa/lights/3/state",
-    "https://192.168.178.71/api/dCOuv5NAZaNSuZ5UGbB7dHEUfB182FjhMbPateTa/lights/4/state"
+    "http://192.168.178.71/api/dCOuv5NAZaNSuZ5UGbB7dHEUfB182FjhMbPateTa/lights/1/state",
+    "http://192.168.178.71/api/dCOuv5NAZaNSuZ5UGbB7dHEUfB182FjhMbPateTa/lights/2/state",
+    "http://192.168.178.71/api/dCOuv5NAZaNSuZ5UGbB7dHEUfB182FjhMbPateTa/lights/3/state",
+    "http://192.168.178.71/api/dCOuv5NAZaNSuZ5UGbB7dHEUfB182FjhMbPateTa/lights/4/state"
 ]
 
 print("Starting the program.")
@@ -25,7 +25,7 @@ if state.lower() == "off":
     data = '{"on": false}'
 
 for light in urls:
-    requests.put(light, data, verify=False)
+    requests.put(light, data)  # , verify=False)
 
 
 if state.lower() == "on":
@@ -55,6 +55,6 @@ if state.lower() == "on":
             print("Color currently not available.")
 
         for light in urls:
-            requests.put(light, data, verify=False)
+            requests.put(light, data)  # , verify=False)
 
 print("Sucess.")

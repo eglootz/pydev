@@ -1,11 +1,11 @@
 # importing requests for communicating with the API
 import requests
 # importing urllib3 for disabling warnings
-import urllib3
+# import urllib3
 import time
 
 # disabling warnings (certification issue)
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+# urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # setting the username and IP-adress
 user = "JoSOxXkKb6sVDmTNEVsGel3sFh0wehyC3WHv0oAv"
@@ -25,7 +25,7 @@ def put_lights(data):
     # put every light in the list to the specified data (changing color, turning on/off, etc.)
     for light in light_states:
         # time.sleep(1)
-        requests.put(light, data, verify=False)  # , timeout=3)
+        requests.put(light, data)  # , verify=False)  # , timeout=3)
 
 
 # "on":bool -> turn the lights on  or off
