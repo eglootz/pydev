@@ -14,9 +14,9 @@ user = "JoSOxXkKb6sVDmTNEVsGel3sFh0wehyC3WHv0oAv"
 ip_adress = "192.168.178.71"
 # putting all lights in a list
 light_states = [
-    f"http://{ip_adress}/api/{user}/lights/1/state",
-    f"http://{ip_adress}/api/{user}/lights/2/state",
-    f"http://{ip_adress}/api/{user}/lights/3/state",
+    # f"http://{ip_adress}/api/{user}/lights/1/state",
+    # f"http://{ip_adress}/api/{user}/lights/2/state",
+    # f"http://{ip_adress}/api/{user}/lights/3/state",
     f"http://{ip_adress}/api/{user}/lights/4/state"
 ]
 
