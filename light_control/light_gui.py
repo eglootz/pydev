@@ -54,7 +54,7 @@ hue_button.grid(column=2, row=2, padx=5, pady=5)
 
 def bri_slider_changed(event):
     bri = int(bri_slider.get())
-    print(bri)
+    # print(bri)
     lc.brightness(value=bri)
 
 
@@ -76,7 +76,7 @@ bri_slider.grid(
 
 def sat_slider_changed(event):
     sat = int(sat_slider.get())
-    print(sat)
+    # print(sat)
     lc.saturation(value=sat)
 
 
