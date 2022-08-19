@@ -1,10 +1,5 @@
 import requests
 
-# disabling warnings (certification issue)
-#import urllib3
-# urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-
-
 # advanced program
 urls = [
     "http://192.168.178.71/api/dCOuv5NAZaNSuZ5UGbB7dHEUfB182FjhMbPateTa/lights/1/state",
@@ -25,7 +20,7 @@ if state.lower() == "off":
     data = '{"on": false}'
 
 for light in urls:
-    requests.put(light, data)  # , verify=False)
+    requests.put(light, data)
 
 
 if state.lower() == "on":
