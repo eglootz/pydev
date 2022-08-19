@@ -3,12 +3,16 @@ import light_control as lc
 import check_motion as cm
 import cam
 import send_mail as sm
-# importing the time module for logging motion times
 import time
 import tweet as t
 import os
 
+
 print("Starting the program...")
+print("Initializing camera...")
+cam.initialize()
+print("Camera initialized.")
+print("~~~~~~~~~~~~~~~~~~~")
 
 # set current_motion to false to start the program
 current_motion = False
@@ -19,12 +23,15 @@ while True:
 
     if motion == True and current_motion == False:
         current_time = time.strftime('%H:%M:%S')
-        print(f"Motion detected: {current_time}")
-        lc.light("red")
-        cam.picture(name=current_time)
-        current_motion = True
 
         alert = f"Motion detected at {current_time}!"
+
+        print(alert)
+        lc.light("red")
+        cam.picture(name=current_time)
+        print("Picture was taken.")
+        current_motion = True
+
         # mail stuff
 
         content = f"There was a motion in your room - who could it be? ({current_time})"
@@ -39,6 +46,8 @@ while True:
 
         os.remove(path)
         print("DM with photo was sent.")
+
+        print("~~~~~~~~~~~~~~~~~~~")
 
     if motion == False:
         current_motion = False
