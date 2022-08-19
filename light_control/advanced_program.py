@@ -9,7 +9,6 @@ urls = [
 ]
 
 print("Starting the program.")
-
 print("Turn lights on/off")
 
 state = input()

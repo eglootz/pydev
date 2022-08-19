@@ -8,6 +8,8 @@ import time
 import tweet as t
 import os
 
+print("Starting the program...")
+
 # set current_motion to false to start the program
 current_motion = False
 
@@ -28,6 +30,7 @@ while True:
         content = f"There was a motion in your room - who could it be? ({current_time})"
         sm.send_mail(subject=alert, content=content,
                      person="Bewegungslogger")
+        print("Mail was sent.")
 
         # tweet stuff
         path = f"log_images/{current_time}.jpg"
@@ -35,6 +38,7 @@ while True:
         t.send_dm(username="eglootz", path=path, status=f"{alert} @eglootz")
 
         os.remove(path)
+        print("DM with photo was sent.")
 
     if motion == False:
         current_motion = False
