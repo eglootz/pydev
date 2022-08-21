@@ -7,9 +7,6 @@ auth.set_access_token(access_token, access_secret)
 
 api = tweepy.API(auth, wait_on_rate_limit=True)
 
-# wait_on_rate_limit_notify=True,
-# , compression=True
-
 
 def tweet(status):
     api.update_status(status=status)
@@ -18,14 +15,6 @@ def tweet(status):
 def tweet_image(status, path):
     media = api.media_upload(path)
     api.update_status(status, media_ids=[media.media_id])
-
-    # Upload image
-
-    # Post tweet with image
-
-    # tweet = "Great scifi author or greatest scifi author? #williamgibson"
-
-#    post_result = api.update_status(status=tweet, media_ids=[media.media_id])
 
 
 def send_dm(username, path, status):

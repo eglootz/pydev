@@ -1,11 +1,12 @@
 import requests
+from credentials import ip_adress, user
 
 # advanced program
 urls = [
-    "http://192.168.178.71/api/dCOuv5NAZaNSuZ5UGbB7dHEUfB182FjhMbPateTa/lights/1/state",
-    "http://192.168.178.71/api/dCOuv5NAZaNSuZ5UGbB7dHEUfB182FjhMbPateTa/lights/2/state",
-    "http://192.168.178.71/api/dCOuv5NAZaNSuZ5UGbB7dHEUfB182FjhMbPateTa/lights/3/state",
-    "http://192.168.178.71/api/dCOuv5NAZaNSuZ5UGbB7dHEUfB182FjhMbPateTa/lights/4/state"
+    f"http://{ip_adress}/api/{user}/lights/1/state",
+    f"http://{ip_adress}/api/{user}/lights/2/state",
+    f"http://{ip_adress}/api/{user}/lights/3/state",
+    f"http://{ip_adress}/api/{user}/lights/4/state"
 ]
 
 print("Starting the program.")

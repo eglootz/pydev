@@ -3,10 +3,11 @@ import requests
 # importing json for working with json files and data
 import json
 
-# setting the sensor url
-#sensor_url = "https://192.168.178.71/api/dCOuv5NAZaNSuZ5UGbB7dHEUfB182FjhMbPateTa/sensors/3"
+from credentials import ip_adress, user
 
-sensor_url = "http://192.168.178.71/api/JoSOxXkKb6sVDmTNEVsGel3sFh0wehyC3WHv0oAv/sensors/3"
+# setting the sensor url
+
+sensor_url = f"http://{ip_adress}/api/{user}/sensors/3"
 
 
 def check_motion():

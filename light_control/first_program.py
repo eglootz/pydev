@@ -1,6 +1,7 @@
 import requests
+from credentials import ip_adress, user
 
-light = "http://192.168.178.71/api/JoSOxXkKb6sVDmTNEVsGel3sFh0wehyC3WHv0oAv/lights/1/state"
+light = f"http://{ip_adress}/api/{user}/lights/4/state"
 color = input("Enter a color: ")
 
 if color == "green":
@@ -10,3 +11,4 @@ if color == "blue":
     data = '{"on":true, "sat":254, "bri":254,"hue":46920}'
 
 requests.put(light, data)
+print(f"Color changed to {color}")

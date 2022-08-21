@@ -2,12 +2,10 @@ import smtplib
 import ssl
 import imghdr
 from email.message import EmailMessage
-from credentials import password, sender_email
+from credentials import password, sender_email, receiver_email
 
 port = 465  # For SSL
 smtp_server = "smtp.gmail.com"
-# sender_email = "eglootz.code@gmail.com"  # Enter your address
-receiver_email = "elias.glootz@gmail.com"  # Enter receiver address
 
 context = ssl.create_default_context()
 

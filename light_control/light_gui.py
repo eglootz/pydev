@@ -5,12 +5,6 @@ from tkinter import ttk
 import light_control as lc
 import color_wheel as cw
 
-# importing urllib3 for disabling warnings
-import urllib3
-
-# disable warnings about insecure requests
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-
 # making the root window
 root = tk.Tk()
 # defining the size

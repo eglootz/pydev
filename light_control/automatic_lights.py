@@ -10,7 +10,9 @@ import os
 
 print("Starting the program...")
 print("Initializing camera...")
+print("~~~~~~~~~~~~~~~~~~~")
 cam.initialize()
+print("~~~~~~~~~~~~~~~~~~~")
 print("Camera initialized.")
 print("~~~~~~~~~~~~~~~~~~~")
 
@@ -33,7 +35,6 @@ while True:
         current_motion = True
 
         # mail stuff
-
         content = f"There was a motion in your room - who could it be? ({current_time})"
         sm.send_mail(subject=alert, content=content,
                      person="Bewegungslogger")
@@ -41,11 +42,11 @@ while True:
 
         # tweet stuff
         path = f"log_images/{current_time}.jpg"
-        # t.tweet_image(status=status, path=path)
+        # t.tweet_image(status=status, path=path) -> if you want to post it
         t.send_dm(username="eglootz", path=path, status=f"{alert} @eglootz")
-
-        os.remove(path)
         print("DM with photo was sent.")
+        os.remove(path)
+        print(f"Photo was deleted from {path}")
 
         print("~~~~~~~~~~~~~~~~~~~")
 
