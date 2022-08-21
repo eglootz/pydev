@@ -1,3 +1,5 @@
+# this file is the advanced version of first_program.py and uses the same structure, just with a few more options
+
 import requests
 from credentials import ip_adress, user
 
@@ -50,6 +52,6 @@ if state.lower() == "on":
             print("Color currently not available.")
 
         for light in urls:
-            requests.put(light, data)  # , verify=False)
+            requests.put(light, data)
 
 print("Sucess.")
