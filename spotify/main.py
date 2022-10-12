@@ -14,6 +14,9 @@ def read():
     print(f.read())
 
 
+append(f"\n--- RESTARTED PROGRAM ---")
+
+
 data_elias = False
 data_katya = False
 
