@@ -1,0 +1,12 @@
+Das Kopfrechenspiel
+
+Spieler: Elias
+Anzahl Aufgaben: 3
+Schwierigkeit: LEICHT
+Score: 33.9463
+Dauer: 7.07
+Zeit pro Aufgabe: 2.356666666666667
+→ 25 + 20 = 45 (Eingabe: 45)
+→ 7 + 18 = 25 (Eingabe: 25)
+→ 6 + 18 = 24 (Eingabe: 24)
+3 von 3 Aufgaben richtig beantwortet (0 falsch)
