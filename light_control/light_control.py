@@ -1,8 +1,6 @@
 # importing requests for communicating with the API
 import requests
-
 import time
-
 from credentials import ip_adress, user
 
 
